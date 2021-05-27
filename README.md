@@ -23,3 +23,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 | Date | Description |
 | --- | ----------- |
 |20210527|Initialized Vue-Forms Chapter Repo|
+|20210527|Set up Vue Project and sorted Github Upstream Repo|
