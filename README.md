@@ -24,3 +24,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 | --- | ----------- |
 |20210527|Initialized Vue-Forms Chapter Repo|
 |20210527|Set up Vue Project and sorted Github Upstream Repo|
+|20210601|Continued with Chapter - did Two Way data binding, drop down and check boxes|
