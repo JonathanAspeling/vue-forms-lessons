@@ -11,8 +11,19 @@
         <option value="designer">Web Designer</option>
       </select>
       <label>Skills</label>
-      <input type="text" name="" id="" v-model="tempSkill" @keyup.alt="addSkill" />
-      <div v-for="skill in skills" :key="skill" class="pill">
+      <input
+        type="text"
+        name=""
+        id=""
+        v-model="tempSkill"
+        @keyup.alt="addSkill"
+      />
+      <div
+        v-for="skill in skills"
+        :key="skill"
+        class="pill"
+        @click="removeSkill(skill)"
+      >
         {{ skill }}
       </div>
 
@@ -48,6 +59,15 @@ export default {
         }
         this.tempSkill = "";
       }
+      console.log(this.skills);
+    },
+    removeSkill(skill) {
+      delete this.skills[this.getKeyByValue(this.skills, skill)];
+      this.skills = this.skills;
+      console.log(this.skills);
+    },
+    getKeyByValue(array, value) {
+      return Object.keys(array).find((key) => array[key] === value);
     },
   },
 };
@@ -87,5 +107,17 @@ input[type="checkbox"] {
   margin: 0 10px 0 0;
   position: relative;
   top: 2px;
+}
+.pill {
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  padding: 6px 12px;
+  background: #680;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #eee;
+  cursor: pointer;
 }
 </style>
