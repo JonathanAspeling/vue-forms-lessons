@@ -18,13 +18,8 @@
         v-model="tempSkill"
         @keyup.alt="addSkill"
       />
-      <div
-        v-for="skill in skills"
-        :key="skill"
-        class="pill"
-        @click="removeSkill(skill)"
-      >
-        {{ skill }}
+      <div v-for="skill in skills" :key="skill" class="pill">
+        <span @click="removeSkill(skill)">{{ skill }}</span>
       </div>
 
       <div class="terms">
@@ -62,12 +57,9 @@ export default {
       console.log(this.skills);
     },
     removeSkill(skill) {
-      delete this.skills[this.getKeyByValue(this.skills, skill)];
-      this.skills = this.skills;
-      console.log(this.skills);
-    },
-    getKeyByValue(array, value) {
-      return Object.keys(array).find((key) => array[key] === value);
+      this.skills = this.skills.filter((item)=>{
+        return skill != item
+      })
     },
   },
 };
